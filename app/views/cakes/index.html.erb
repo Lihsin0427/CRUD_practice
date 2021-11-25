@@ -1,0 +1,17 @@
+<h1>產品列表</h1>
+<table>
+<tr>
+  <td>品名</td>
+  <td>價錢</td>
+  <td>action</td>
+</tr>
+<% @cakes.each do |cake|%>
+<tr>
+  <td><%= link_to cake.name, cake_path(cake.id) %></td>
+  <td><%= cake.price %></td>
+  <td><%= link_to "Update", edit_cake_path(cake.id) %></td>
+  <td><%= link_to "Delete", cake_path(cake.id), method: 'delete', data: {confirm:'品項將被刪除，確定嗎？'} %></td>
+<% end %>
+</tr>
+</table>
+<%= link_to "新增產品", new_cake_path %>

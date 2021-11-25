@@ -1,0 +1,30 @@
+<h1>新增產品</h1>
+<% if @cake.errors.any? %>
+  <ul>
+  <% @cake.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
+  </ul>
+<% end %>
+
+<%= form_for(@cake) do |form| %>
+
+  <div class="fields">
+    <%= form.label :name, 'Name' %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="fields">
+    <%= form.label :price, 'Price' %>
+    <%= form.number_field :price %>
+  </div>
+
+  <div class="fields">
+    <%= form.label :intro, 'intro' %>
+    <%= form.text_area :intro %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit '新增產品' %>
+  </div>
+<% end %>

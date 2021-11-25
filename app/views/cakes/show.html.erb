@@ -1,0 +1,12 @@
+
+<% if @cake %>
+<h1><%= @cake.name %></h1>
+
+<ul>
+<li>售價：<%= @cake.price %></li>
+<li>介紹：<%= @cake.intro %></li>
+
+</ul>
+<% else %>
+<h1>No Record Found!</h1>
+<% end %>
